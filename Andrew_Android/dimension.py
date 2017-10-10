@@ -26,10 +26,10 @@ class Game(object):
 
         count = 0
 
-        for hor in [-1, 0, 1]:
-            for ver in [-1, 0, 1]:
-                if not hor == ver == 0 and (self.infinite_board == True or (0 <= x + hor < self.width and 0 <= y + ver < self.height)):
-                    count += self.state.board[(y + ver) % self.height][(x + hor) % self.width]
+        for i in [-1, 0, 1]:
+            for j in [-1, 0, 1]:
+                if not i == j == 0 and (self.infinite_board == True or (0 <= x + i < self.width and 0 <= y + j < self.height)):
+                    count += self.state.board[(y + j) % self.height][(x + i) % self.width]
 
         return count
 
